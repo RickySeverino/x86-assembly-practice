@@ -5,8 +5,24 @@ This is a repo with my asm files I made for practicing x86 Assembly
 
 ### Compile/Run ###
 
-I am using nasm to compile my code
+To compile the program, make sure 'Makefile' is in the same directory as the file.
+
+The following will will compile the code
+
 ```
-nasm -felf64 file.asm && ld file.o && ./a.out
+make all
+
+```
+Print the shellcode with
+
+```
+make raw
+
+```
+To remove the object file as well as the output file (everything but the asm file), run the command
+
+```
+make clean
+
 ```
 
