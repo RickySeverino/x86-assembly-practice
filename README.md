@@ -7,7 +7,7 @@ This is a repo with my asm files I made for practicing x86 Assembly
 
 To compile the program, make sure 'Makefile' is in the same directory as the file.
 
-The following will will compile the code
+The following will compile the code
 
 ```
 make all
