@@ -97,6 +97,45 @@ sprintLF:
 	pop 	eax
 	ret
 
+; ascii to integer function (atoi)
+
+atoi:
+	push 	ebx
+	push 	ecx
+	push 	edx
+	push 	esi
+	mov 	esi, eax
+	xor 	eax, eax
+	xor 	ecx, ecx
+
+.multiplyLoop:
+	xor 	ebx, ebx
+	mov 	bl, [esi+ecx] 	; move a single byte into ebx register's lower half
+	cmp 	bl, 48
+	jl 		.finished
+	cmp 	bl, 57
+	jg 		.finished
+	cmp 	bl, 10
+	je 		.finished
+	cmp 	bl, 0
+	jz 		.finished
+
+	sub 	bl, 48 			; convert ebx register's lower half to decimal representation of ascii value
+	add 	eax, ebx
+	mov 	ebx, 10
+	mul 	ebx
+	inc 	ecx
+	jmp 	.multiplyLoop
+
+.finished:
+	mov 	ebx, 10
+	div 	ebx
+	pop 	esi
+	pop 	edx
+	pop 	ecx
+	pop 	ebx
+	ret
+
 ; exit program and restore resources
 
 quit:
