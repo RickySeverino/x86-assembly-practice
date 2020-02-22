@@ -1,7 +1,7 @@
 
 # x86 Assembly Practice #
 
-This is a repo with my asm files I made for practicing x86 Assembly
+This is a repo of asm files for practicing x86 Assembly
 
 ### Compile/Run ###
 
